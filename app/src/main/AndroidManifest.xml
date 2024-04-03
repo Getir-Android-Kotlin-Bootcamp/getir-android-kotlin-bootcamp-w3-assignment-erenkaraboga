@@ -13,6 +13,10 @@
         android:theme="@style/Theme.FoodCouriers"
         tools:targetApi="31">
         <activity
+            android:name=".AccountActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FoodCouriers" />
+        <activity
             android:name=".TestActivity"
             android:exported="false" />
         <activity
