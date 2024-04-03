@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.getir.patika.foodcouriers.databinding.FragmentAccountBinding
+import com.getir.patika.foodcouriers.databinding.FragmentOnboardingFavoritiesBinding
+import com.wada811.viewbindingktx.viewBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,7 +24,7 @@ class AccountFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    private val binding by viewBinding(FragmentAccountBinding::bind)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,6 +39,13 @@ class AccountFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_account, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.btNext.setOnClickListener {
+            findNavController().navigate(R.id.action_accountFragment_to_setLocationFragment2)
+        }
+        super.onViewCreated(view, savedInstanceState)
     }
 
     companion object {
